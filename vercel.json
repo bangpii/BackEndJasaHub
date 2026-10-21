@@ -7,7 +7,7 @@
     "api/index.js": {
       "includeFiles": "dist/**",
       "maxDuration": 30,
-      "runtime": "nodejs24.x"
+      "runtime": "nodejs22.x"
     }
   },
   "rewrites": [{ "source": "/(.*)", "destination": "/api/index" }]
