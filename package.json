@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Backend JasaHub (NestJS)",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "nest build",
+    "build": "nest build && node -e \"const fs=require('fs');fs.writeFileSync('dist/package.json',JSON.stringify({type:'commonjs'}))\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:prod": "node dist/main",
