@@ -4,7 +4,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "functions": {
-    "api/*.cjs": {
+    "api/index.js": {
       "includeFiles": "dist/**",
       "maxDuration": 30
     }
