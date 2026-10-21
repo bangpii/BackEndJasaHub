@@ -1,8 +1,8 @@
-const server = require('express')();
+const express = require('express');
+const server = express();
 let appPromise = null;
 
 async function createApp() {
-  const express = require('express');
   const { NestFactory } = require('@nestjs/core');
   const { ExpressAdapter } = require('@nestjs/platform-express');
   const { AppModule } = require('../dist/app.module');
@@ -15,24 +15,6 @@ async function createApp() {
 }
 
 module.exports = async (req, res) => {
-  if (req.url === '/__probe') {
-    res.setHeader('Content-Type', 'application/json');
-    let nest = 'ok';
-    try {
-      require('@nestjs/core');
-    } catch (e) {
-      nest = `${e.code || e.name}: ${e.message}`;
-    }
-    res.end(
-      JSON.stringify({
-        node: process.version,
-        cwd: process.cwd(),
-        nest,
-        pkgType: require('../package.json').type ?? 'commonjs',
-      }),
-    );
-    return;
-  }
   try {
     if (!appPromise) appPromise = createApp();
     const handler = await appPromise;
