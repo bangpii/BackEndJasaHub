@@ -1,0 +1,37 @@
+{
+  "name": "jashub-backend",
+  "version": "1.0.0",
+  "description": "Backend JasaHub (NestJS)",
+  "private": true,
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:prod": "node dist/main",
+    "migration": "tsx --env-file=.env src/database/migrations/runner.ts",
+    "migration:down": "tsx --env-file=.env src/database/migrations/runner.ts down"
+  },
+  "dependencies": {
+    "@nestjs/common": "^12.2.0",
+    "@nestjs/config": "^12.0.1",
+    "@nestjs/core": "^12.2.0",
+    "@nestjs/platform-express": "^12.2.0",
+    "@nestjs/platform-socket.io": "^12.2.0",
+    "@nestjs/websockets": "^12.2.0",
+    "@types/nodemailer": "^8.0.2",
+    "bcryptjs": "^3.0.3",
+    "nodemailer": "^10.1.7",
+    "pg": "^8.23.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "socket.io": "^4.8.4"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^12.0.9",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "typescript": "6.0.3"
+  }
+}
