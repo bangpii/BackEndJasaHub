@@ -6,8 +6,7 @@
   "functions": {
     "api/index.js": {
       "includeFiles": "dist/**",
-      "maxDuration": 30,
-      "runtime": "nodejs22.x"
+      "maxDuration": 30
     }
   },
   "rewrites": [{ "source": "/(.*)", "destination": "/api/index" }]
